@@ -617,6 +617,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2852357567667361150}
     m_Modifications:
+    - target: {fileID: 334677476241754883, guid: c162ee3eae2d1b242aeab79b9a14932a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cdfa79fe63beaab42b6c0587e0f41d2e, type: 2}
+    - target: {fileID: 906566183721943053, guid: c162ee3eae2d1b242aeab79b9a14932a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 369164f4adaf6ba81a9d9476f6eb97e1, type: 2}
+    - target: {fileID: 1445022051925233665, guid: c162ee3eae2d1b242aeab79b9a14932a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0cc20cc2d8e0e4d4e968a92e79002c90, type: 2}
+    - target: {fileID: 1946879164042757672, guid: c162ee3eae2d1b242aeab79b9a14932a, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946879164042757672, guid: c162ee3eae2d1b242aeab79b9a14932a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 58b6fdcc4ebf51c49a60fffcbe2647da, type: 2}
+    - target: {fileID: 1946879164042757672, guid: c162ee3eae2d1b242aeab79b9a14932a, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 172b6fada97d748458aa2963dab3bfb0, type: 2}
+    - target: {fileID: 2213005290062112836, guid: c162ee3eae2d1b242aeab79b9a14932a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cfb30576ed6caf14c854dbaf11a79764, type: 2}
+    - target: {fileID: 2339370264246384637, guid: c162ee3eae2d1b242aeab79b9a14932a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b385705bda4cc0428139bba69e77522, type: 2}
     - target: {fileID: 3906589957887542486, guid: c162ee3eae2d1b242aeab79b9a14932a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -677,6 +709,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Anatomy_of_the_Inner_Ear_Sketchfab_upload_01
       objectReference: {fileID: 0}
+    - target: {fileID: 6157664360944570927, guid: c162ee3eae2d1b242aeab79b9a14932a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9427c013ebb074a4e9749f0faa22ee5e, type: 2}
+    - target: {fileID: 8341217238154473296, guid: c162ee3eae2d1b242aeab79b9a14932a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 172b6fada97d748458aa2963dab3bfb0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c162ee3eae2d1b242aeab79b9a14932a, type: 3}
 --- !u!23 &2455589079353028484 stripped
