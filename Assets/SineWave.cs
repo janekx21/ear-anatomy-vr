@@ -26,25 +26,30 @@ public class SineWave : MonoBehaviour
 
     float progress = 0.0f;
 
-    float[] data;
+    float[] data = new float[1000];
     // Start is called before the first frame update
     void Start()
     {
         line = GetComponent<LineRenderer>();
         line.positionCount = 1000;
 
-        clip.GetData(data, 0);
+
     }
 
     // Update is called once per frame
+    int off;
     void Update()
     {
-        var dist = (target.position - source.position).magnitude;
+        clip.GetData(data, off);
+        off += Mathf.RoundToInt(speed);
+        var dist = (source.position - target.position).magnitude;
         for (int i = 0; i < line.positionCount; i++)
         {
             var t = (float)i / (float)line.positionCount;
-            
-            line.SetPosition(i, Vector3.Lerp(source.position, target.position, t) + Vector3.up * height * Mathf.Sin((float)i * sinScale* dist + progress));
+            var amp = data[i % data.Length];
+            //line.SetPosition(i, Vector3.Lerp(source.position, target.position, t) + Vector3.up * height * Mathf.Sin((float)i * sinScale* dist + progress));
+
+            line.SetPosition(i, Vector3.Lerp(target.position, source.position, t) + Vector3.up * height * amp);
 
         }
         progress += Time.deltaTime * speed;
