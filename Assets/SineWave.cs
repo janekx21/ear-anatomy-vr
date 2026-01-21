@@ -37,10 +37,12 @@ public class SineWave : MonoBehaviour
     }
 
     // Update is called once per frame
-    int off;
+    int off = 0;
     void Update()
     {
-        clip.GetData(data, off);
+        Debug.Assert(off >= 0);
+        Debug.Assert(speed >= 0);
+        clip.GetData(data, off % (clip.samples - data.Length));
         off += Mathf.RoundToInt(speed);
         var dist = (source.position - target.position).magnitude;
         for (int i = 0; i < line.positionCount; i++)

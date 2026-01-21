@@ -1,0 +1,1 @@
+Speaker Model: https://free3d.com/3d-model/big-speaker-84165.html
