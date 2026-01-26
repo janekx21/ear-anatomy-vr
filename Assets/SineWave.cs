@@ -12,8 +12,7 @@ public class SineWave : MonoBehaviour
     float speed =
     1.0f;
     [SerializeField]
-    float height =
-1.0f;
+    float height = 1.0f;
     LineRenderer line;
 
     [SerializeField]
@@ -24,7 +23,7 @@ public class SineWave : MonoBehaviour
     [SerializeField]
     AudioClip clip;
 
-    float progress = 0.0f;
+    float time = 0.0f;
 
     float[] data = new float[1000];
     // Start is called before the first frame update
@@ -43,7 +42,7 @@ public class SineWave : MonoBehaviour
         Debug.Assert(off >= 0);
         Debug.Assert(speed >= 0);
         clip.GetData(data, off % (clip.samples - data.Length));
-        off += Mathf.RoundToInt(speed);
+        off = Mathf.RoundToInt(time);
         var dist = (source.position - target.position).magnitude;
         for (int i = 0; i < line.positionCount; i++)
         {
@@ -54,7 +53,8 @@ public class SineWave : MonoBehaviour
             line.SetPosition(i, Vector3.Lerp(target.position, source.position, t) + Vector3.up * height * amp);
 
         }
-        progress += Time.deltaTime * speed;
+        // progress += Time.deltaTime * speed;
+        time += Time.deltaTime * speed;
     }
 
     void setFreq(float freq)
