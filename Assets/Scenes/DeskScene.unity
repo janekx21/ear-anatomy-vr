@@ -5799,11 +5799,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b68910384bcb74ca1c7c14ea13b178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  speed: 20
+  skip: 5
   height: 0.1
   target: {fileID: 2025845719}
   source: {fileID: 1184157496}
-  clip: {fileID: 8300000, guid: 059222731f46f204aa57f080f7485ef4, type: 3}
+  clip: {fileID: 8300000, guid: 0974ebf33de0988b4aa8b9c74b67e386, type: 3}
 --- !u!120 &1200781499
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -12044,9 +12045,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4851788074184978078, guid: 47992052497ec0244862799e7a5e50f0, type: 3}
+      propertyPath: MinDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851788074184978078, guid: 47992052497ec0244862799e7a5e50f0, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 059222731f46f204aa57f080f7485ef4, type: 3}
+      objectReference: {fileID: 8300000, guid: 0974ebf33de0988b4aa8b9c74b67e386, type: 3}
     - target: {fileID: 4851788074449883446, guid: 47992052497ec0244862799e7a5e50f0, type: 3}
       propertyPath: m_Name
       value: Speaker

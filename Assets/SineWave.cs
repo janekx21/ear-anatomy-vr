@@ -9,6 +9,8 @@ public class SineWave : MonoBehaviour
     [SerializeField]
     float speed = 1.0f;
     [SerializeField]
+    float skip = 1.0f;
+    [SerializeField]
     float height = 1.0f;
     
     [SerializeField]
@@ -28,6 +30,7 @@ public class SineWave : MonoBehaviour
     {
         line = GetComponent<LineRenderer>();
         line.positionCount = 1000;
+        time = skip * clip.frequency;
     }
 
     // Update is called once per frame
