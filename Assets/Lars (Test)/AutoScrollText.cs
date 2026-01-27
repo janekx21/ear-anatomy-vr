@@ -9,6 +9,7 @@ public class AutoScrollText : MonoBehaviour
     public float startPause = 1.5f;     
     public float endPause = 2.0f;
     public TextMeshProUGUI textComponent;
+    public TextMeshProUGUI titleTextComponent;
 
     private RectTransform textRectTransform;
     private RectTransform parentRectTransform;
@@ -97,12 +98,13 @@ public class AutoScrollText : MonoBehaviour
         }
     }
 
-    public void UpdateText(string newText)
+    public void UpdateText(string newText, string newTitle)
     {
         StopAllCoroutines();
         shouldScroll = false;
 
         textComponent.text = newText;
+        titleTextComponent.text = newTitle;
 
         Canvas.ForceUpdateCanvases();
 

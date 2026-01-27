@@ -10,6 +10,10 @@ public class GrabTextChange : MonoBehaviour
     [TextArea(5, 10)]
     public string infoText;
 
+    [Tooltip("The text to display when this object is grabbed in the title")]
+    [TextArea(5, 10)]
+    public string titleText;
+
     public AutoScrollText textScreenScript;
 
     private XRGrabInteractable grabInteractable;
@@ -38,8 +42,10 @@ public class GrabTextChange : MonoBehaviour
     {
         if (textScreenScript != null)
         {
-            textScreenScript.UpdateText(infoText);
+            textScreenScript.UpdateText(infoText, titleText);
         }
+
+        
 
     }
 
