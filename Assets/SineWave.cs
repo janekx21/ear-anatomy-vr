@@ -61,4 +61,20 @@ public class SineWave : MonoBehaviour
     {
         this.sinScale = freq;
     }
+
+    public void setAudioClip(AudioClip newClip)
+    {
+        clip = newClip;
+    }
+
+    public void stopAudioClip()
+    {
+        clip = null;
+    }
+
+    public void setHeight(float newHeight)
+    {
+        height = newHeight;
+    }
+
 }
