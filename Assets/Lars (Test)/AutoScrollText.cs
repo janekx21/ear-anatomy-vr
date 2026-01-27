@@ -7,7 +7,8 @@ public class AutoScrollText : MonoBehaviour
     [Header("Settings")]
     public float scrollSpeed = 20f;
     public float startPause = 1.5f;     
-    public float endPause = 2.0f;       
+    public float endPause = 2.0f;
+    public TextMeshProUGUI textComponent;
 
     private RectTransform textRectTransform;
     private RectTransform parentRectTransform;
@@ -94,5 +95,18 @@ public class AutoScrollText : MonoBehaviour
         {
             shouldScroll = false;
         }
+    }
+
+    public void UpdateText(string newText)
+    {
+        StopAllCoroutines();
+        shouldScroll = false;
+
+        textComponent.text = newText;
+
+        Canvas.ForceUpdateCanvases();
+
+        ResetAndCheck();
+
     }
 }

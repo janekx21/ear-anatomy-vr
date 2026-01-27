@@ -76,4 +76,20 @@ public class SineWave : MonoBehaviour
         var offFrag = time - off;
         return sample(offFrag);
     }
+
+    public void setAudioClip(AudioClip newClip)
+    {
+        clip = newClip;
+    }
+
+    public void stopAudioClip()
+    {
+        clip = null;
+    }
+
+    public void setHeight(float newHeight)
+    {
+        height = newHeight;
+    }
+
 }
