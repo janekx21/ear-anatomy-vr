@@ -9,6 +9,9 @@ ModelImporter:
   - first:
       74: 4684508249018470183
     second: Armature|BoneMovementLinera
+  - first:
+      74: 8152769986465237019
+    second: Armature|BoneMovementLinera.001
   externalObjects:
   - first:
       type: UnityEngine:Material
