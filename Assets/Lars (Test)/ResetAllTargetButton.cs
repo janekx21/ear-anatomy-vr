@@ -8,18 +8,28 @@ public class ResetAllTargetButton : MonoBehaviour
 {
     public Transform targetObject;
 
+    string popUpName = "Pop Up";
+
     private Dictionary<Transform, (Vector3 pos, Quaternion rot)> savedTransforms = new();
     //private List<XRGrabInteractable> allGrabbables = new();
     private List<XRSocketInteractor> allSockets = new();
+    private List<GameObject> allPopUps = new List<GameObject>();
 
     void Start()
     {
         if (targetObject != null)
         {
-            foreach (Transform t in targetObject.GetComponentsInChildren<Transform>())
+            foreach (Transform t in targetObject.GetComponentsInChildren<Transform>(true))
             {
                 savedTransforms[t] = (t.localPosition, t.localRotation);
+
+                if (t.name == popUpName)
+                {
+                    allPopUps.Add(t.gameObject);
+                }
+
             }
+
 
             //allGrabbables.AddRange(targetObject.GetComponentsInChildren<XRGrabInteractable>());
             allSockets.AddRange(targetObject.GetComponentsInChildren<XRSocketInteractor>());
@@ -60,6 +70,15 @@ public class ResetAllTargetButton : MonoBehaviour
                 kvp.Key.localPosition = kvp.Value.pos;
                 kvp.Key.localRotation = kvp.Value.rot;
             }
+        }
+
+        foreach (var popup in allPopUps)
+        {
+            if (popup != null)
+            {
+                popup.SetActive(false);
+            }
+            
         }
 
         foreach (var socket in allSockets)
