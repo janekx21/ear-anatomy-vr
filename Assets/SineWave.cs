@@ -24,35 +24,34 @@ public class SineWave : MonoBehaviour
     LineRenderer line;
     float time = 0.0f;
     float[] data = new float[1000];
+    Vector3[] positions = new Vector3[1000];
 
     // Start is called before the first frame update
     void Start()
     {
         line = GetComponent<LineRenderer>();
         line.positionCount = 1000;
-        time = skip * clip.frequency;
+        time = skip * 44000;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (clip == null) return;
         Debug.Assert(speed >= 0);
         var off = Mathf.FloorToInt(time);
         var offFrag = time - off;
         clip.GetData(data, off % (clip.samples - data.Length));
-        // var dist = (source.position - target.position).magnitude;
+        Vector3 targetPos = target.position;
+        Vector3 sourcePos = source.position;
         for (int i = 0; i < line.positionCount; i++)
         {
-            var amp = (sample(offFrag + i) + sample(offFrag + i + 1)) / 2;
+            var amp = (sample(offFrag + i) + sample(offFrag + i + 1)) * 0.5f;
             var t = (float)i / (float)line.positionCount;
-            // var amp1 = data[i % data.Length];
-            // var amp2 = data[(i + 1) % data.Length];
-            // var amp = Mathf.Lerp(amp1, amp2, offFrag);
 
-            line.SetPosition(i, Vector3.Lerp(target.position, source.position, t) + Vector3.up * height * amp);
-
+            positions[i] = Vector3.Lerp(targetPos, sourcePos, t) + amp * height * Vector3.up;
         }
-        // progress += Time.deltaTime * speed;
+        line.SetPositions(positions);
         time += Time.deltaTime * speed;
     }
 
