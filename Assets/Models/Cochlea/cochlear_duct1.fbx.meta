@@ -6,6 +6,9 @@ ModelImporter:
   - first:
       74: -7602763034458661716
     second: Plane.011|Plane.011Action
+  - first:
+      74: 4781951162920444690
+    second: Armature|ArmatureAction
   externalObjects: {}
   materials:
     materialImportMode: 2
