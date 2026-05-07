@@ -5,7 +5,7 @@ using UnityEngine;
 public class CochleaMovement : MonoBehaviour
 {
     [SerializeField] private float pos;
-    [SerializeField] public SineWave sineWave;
+    [SerializeField] public AudioSourceGetSpectrumData spectrumData;
     private Animator _animator;
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,7 @@ public class CochleaMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pos = sineWave.SampleTarget() * 0.5f + 0.5f;
+        pos = spectrumData.SinFromFreq(500) * 0.5f + 0.5f;
         _animator.speed = 0;
         _animator.Play("Armature|ArmatureAction", 0, pos);
     }

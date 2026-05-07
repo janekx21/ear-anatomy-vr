@@ -1895,6 +1895,7 @@ MonoBehaviour:
   m_Script: {fileID: 1907029041}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Entries: []
 --- !u!4 &200788103
 Transform:
   m_ObjectHideFlags: 19
@@ -2406,6 +2407,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4851788074184978078, guid: 47992052497ec0244862799e7a5e50f0, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4ee3175af034e755eaf2215fe2c620e6, type: 3}
     - target: {fileID: 4851788074184978079, guid: 47992052497ec0244862799e7a5e50f0, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -5026,6 +5031,23 @@ Transform:
   m_Father: {fileID: 1292997461}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1539520828 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4851788074184978079, guid: 47992052497ec0244862799e7a5e50f0, type: 3}
+  m_PrefabInstance: {fileID: 746928844}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1539520831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539520828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bebfb3107db12f498a7142a40ebfff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1618576397 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3349205286195350560, guid: 13df7148094000eb6a6c55b7e8aca8ea, type: 3}
@@ -6017,6 +6039,10 @@ PrefabInstance:
       propertyPath: sineWave
       value: 
       objectReference: {fileID: 40035179}
+    - target: {fileID: 6676450539456974873, guid: 13df7148094000eb6a6c55b7e8aca8ea, type: 3}
+      propertyPath: spectrumData
+      value: 
+      objectReference: {fileID: 1539520831}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13df7148094000eb6a6c55b7e8aca8ea, type: 3}
 --- !u!1001 &5534409079552104243

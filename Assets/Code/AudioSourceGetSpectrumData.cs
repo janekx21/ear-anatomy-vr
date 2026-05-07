@@ -40,10 +40,8 @@ public class AudioSourceGetSpectrumData : MonoBehaviour
 
         foreach(var f in new float[] { 100, 200, 500, 800, 1000, 10000 })
         {
+            var x = SinFromFreq(f);
             var freq_i = IndexFromFreq(f);
-            var mag = MagnitudeAtFreq(f);
-            var sin = Mathf.Sin(Time.time);
-            var x = Mathf.Clamp01(Mathf.Pow( (mag + 24) / 20, 8)) * sin;
             Debug.DrawLine(new Vector3(Mathf.Log(freq_i), 0, 3), new Vector3(Mathf.Log(freq_i), x * 10, 3), Color.red);
         }
 
@@ -60,5 +58,14 @@ public class AudioSourceGetSpectrumData : MonoBehaviour
     {
         var freq_i = IndexFromFreq(freq);
         return Mathf.Log(spectrum[freq_i - 1]);
+    }
+
+    public float SinFromFreq(float f)
+    {
+        var mag = MagnitudeAtFreq(f);
+        var sin = Mathf.Sin(Time.time * 2);
+        var from = 5;
+        var to = 24;
+        return Mathf.Clamp01(Mathf.Pow((mag + to) / (to-from), 8)) * sin;
     }
 }
