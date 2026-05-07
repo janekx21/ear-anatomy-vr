@@ -8,6 +8,7 @@ public class AudioSourceGetSpectrumData : MonoBehaviour
     public const int Resolution = 1024;
     AudioSource m_MyAudioSource;
     public float[] spectrum = new float[Resolution];
+    public float[] spectrumSmooth = new float[Resolution];
 
     void Start()
     {
@@ -17,6 +18,10 @@ public class AudioSourceGetSpectrumData : MonoBehaviour
     void Update()
     {
         m_MyAudioSource.GetSpectrumData(spectrum, 0, FFTWindow.Hanning);
+        for (int i = 0; i < spectrum.Length; i++)
+        {
+            spectrumSmooth[i] = Mathf.Lerp(spectrumSmooth[i], spectrum[i], 0.1f);
+        }
 
         // Loop through the populated array
         // Start the loop from 1 and to 1 less than the length, so the loop can draw lines between adjacent bins. 
@@ -47,7 +52,7 @@ public class AudioSourceGetSpectrumData : MonoBehaviour
 
     }
 
-    int IndexFromFreq(float freq)
+    public int IndexFromFreq(float freq)
     {
         var sampleRate = AudioSettings.outputSampleRate;
         return (int)Mathf.Floor(freq * Resolution / (sampleRate * 0.5f));
@@ -57,7 +62,7 @@ public class AudioSourceGetSpectrumData : MonoBehaviour
     float MagnitudeAtFreq(float freq)
     {
         var freq_i = IndexFromFreq(freq);
-        return Mathf.Log(spectrum[freq_i - 1]);
+        return Mathf.Log(spectrumSmooth[freq_i - 1]);
     }
 
     public float SinFromFreq(float f)
