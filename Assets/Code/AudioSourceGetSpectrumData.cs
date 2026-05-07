@@ -5,9 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class AudioSourceGetSpectrumData : MonoBehaviour
 {
-    const int Resolution = 1024;
+    public const int Resolution = 1024;
     AudioSource m_MyAudioSource;
-    float[] spectrum = new float[Resolution];
+    public float[] spectrum = new float[Resolution];
 
     void Start()
     {
